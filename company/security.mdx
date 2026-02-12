@@ -1,0 +1,113 @@
+---
+title: "Security and Privacy"
+description: "How CiteScore protects your data: encryption, authentication, access controls, data handling practices, and infrastructure security."
+---
+
+## Overview
+
+CiteScore is built with security as a foundational requirement. This page describes how we protect your data, manage access, and handle sensitive information including API keys, brand data, and audit results.
+
+## Authentication
+
+CiteScore supports two authentication methods:
+
+- **Email and password** — passwords are hashed and never stored in plaintext
+- **Google OAuth** — delegated authentication through Google's identity platform
+
+All authentication is managed through NextAuth.js with secure session handling. Sessions are invalidated on logout and expire automatically.
+
+## Data Encryption
+
+### At Rest
+
+- **API keys** (BYOK) are encrypted using AES-256-GCM before storage
+- **Database** is hosted on PostgreSQL with encryption at rest enabled
+- Only the last four characters of API keys are displayed in the interface
+
+### In Transit
+
+- All connections use TLS/HTTPS
+- API calls to AI providers are made over encrypted connections
+- No sensitive data is transmitted in URL parameters
+
+## Access Controls
+
+### Row-Level Security (RLS)
+
+CiteScore implements Row-Level Security at the database level. This ensures:
+
+- Users can only access data belonging to their workspace
+- Cross-workspace data access is prevented at the database layer, not just the application layer
+- Even in the event of an application-level vulnerability, data isolation is enforced
+
+### Role-Based Access
+
+Each workspace supports three roles:
+
+| Role | Permissions |
+|------|------------|
+| **Owner** | Full access, billing management, workspace deletion |
+| **Admin** | Full access to brands and features, user management |
+| **Member** | Access to brands and features, no billing or user management |
+
+## Data Handling
+
+### What We Store
+
+- **Brand Profile data** — name, description, positioning, keywords, competitors
+- **Audit results** — questions, AI responses, scores, timestamps
+- **Generated content** — drafts, outlines, published content
+- **Usage data** — credit consumption, operation counts
+- **Account data** — email, name, authentication tokens
+
+### What We Do Not Store
+
+- Full AI provider API keys in readable form (encrypted only)
+- Payment card details (handled by Stripe)
+- Browsing history or tracking cookies beyond session management
+
+### Data Retention
+
+- Active account data is retained as long as your account is active
+- Deleted brands and their associated data are permanently removed
+- Public tool runs (free tools) expire after 30 days
+
+## AI Provider Data Handling
+
+When CiteScore sends queries to AI providers (OpenAI, Anthropic, Google, Perplexity):
+
+- **Queries contain benchmark questions** — category-neutral questions that do not include sensitive brand data
+- **AI responses are stored** — audit results include the full AI response for your review
+- **No training data contribution** — CiteScore uses API access that does not contribute to provider training data (subject to each provider's API terms)
+
+When using BYOK (your own API keys):
+- Operations use your direct relationship with the AI provider
+- Provider data handling follows your agreement with that provider
+
+## Infrastructure
+
+- **Hosting** — deployed on modern cloud infrastructure with automated failover
+- **Database** — PostgreSQL with automated backups and point-in-time recovery
+- **File storage** — generated images and assets stored in secure cloud storage
+- **Monitoring** — application and infrastructure monitoring for availability and performance
+
+## Responsible Disclosure
+
+If you discover a security vulnerability, contact us at security@citescore.ai. We take all reports seriously and will respond within 48 hours.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How are my API keys protected?">
+    API keys provided through BYOK are encrypted using AES-256-GCM before storage. Only the last four characters are displayed in the interface. Keys are decrypted only at the moment of use for API calls.
+  </Accordion>
+  <Accordion title="Can other users in my workspace see my data?">
+    Users within the same workspace share access to brands, audits, and content based on their role. Different workspaces are completely isolated through Row-Level Security at the database level.
+  </Accordion>
+  <Accordion title="Does CiteScore share my data with AI providers?">
+    CiteScore sends category-neutral benchmark questions to AI providers to run audits. These queries do not contain sensitive brand data. AI responses are stored in your workspace for your review. CiteScore uses API access that does not contribute to provider training data.
+  </Accordion>
+  <Accordion title="What happens to my data if I delete my account?">
+    When you delete your account, all associated data — including brand profiles, audits, content, and usage records — is permanently removed.
+  </Accordion>
+</AccordionGroup>

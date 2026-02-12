@@ -1,0 +1,147 @@
+---
+title: "Website GEO Audit"
+description: "The Website GEO Audit crawls your website, evaluates each page for AI readiness, and provides actionable recommendations to improve your site's generative engine optimization."
+---
+
+## Overview
+
+A Website GEO Audit analyzes your website's pages for AI readiness. It crawls your domain, discovers pages, and evaluates each one across four scoring dimensions. The result is a page-by-page score with specific recommendations for improving your site's visibility to AI systems.
+
+While [AEO Audits](/product/aeo-audits) test whether AI mentions your brand, Website GEO Audits test whether your website's content is structured in a way that AI systems can understand and cite.
+
+## How It Works
+
+<Steps>
+  <Step title="Website crawl">
+    CiteScore crawls your domain to discover pages. The crawler follows internal links from your homepage and builds a page inventory.
+  </Step>
+  <Step title="Page discovery">
+    Discovered pages are listed with their URLs, titles, and meta descriptions. You can review the list and exclude pages that are not relevant (e.g., login pages, admin pages).
+  </Step>
+  <Step title="Page-level audit">
+    Each page is evaluated by an AI model across four scoring dimensions. The model analyzes the page content and assigns scores with specific recommendations.
+  </Step>
+  <Step title="Results and recommendations">
+    You receive a per-page score (0–100), a dimension breakdown, and prioritized recommendations for improvement.
+  </Step>
+</Steps>
+
+## Scoring Dimensions
+
+Each page is scored across four dimensions, each worth up to 25 points:
+
+### Content Structure (0–25)
+
+Evaluates headings, section flow, content length, and logical organization. AI systems extract information more effectively from well-structured content with clear hierarchical headings.
+
+**What scores well:**
+- Clear H1/H2/H3 hierarchy
+- Logical section flow
+- Sufficient content depth
+- Scannable structure with lists and subheadings
+
+### Entity Clarity (0–25)
+
+Evaluates how clearly your brand, products, and relevant entities are described. AI systems need explicit context to understand what you do and when to mention you.
+
+**What scores well:**
+- Clear brand name usage
+- Explicit product category statements
+- Named entities with context
+- Consistent terminology
+
+### Answer Formatability (0–25)
+
+Evaluates whether your content contains extractable answers that AI can directly use in its responses. Content with clear question-answer patterns, lists, and FAQ sections scores higher.
+
+**What scores well:**
+- FAQ sections with structured Q&A pairs
+- Direct answers to common questions
+- Bulleted and numbered lists
+- Summary paragraphs at the start of sections
+
+### Semantic Richness (0–25)
+
+Evaluates the depth of topic coverage and use of related concepts. AI systems favor content that demonstrates comprehensive understanding of a topic.
+
+**What scores well:**
+- Coverage of related concepts and terms
+- Technical depth appropriate to the topic
+- Cross-references to related topics
+- Use of specific examples and data
+
+## Page Recommendations
+
+Each audited page receives prioritized recommendations. Recommendations are categorized by:
+
+**Category:**
+- Content Structure — headings, sections, flow
+- Entity Clarity — brand mentions, definitions
+- Answer Format — FAQs, lists, direct answers
+- Semantic Richness — topic depth, related concepts
+- Technical — schema markup, meta tags
+
+**Priority:**
+- High — significant impact on AI visibility
+- Medium — moderate improvement opportunity
+- Low — minor optimization
+
+Each recommendation includes:
+- A description of the issue
+- The current state (what AI sees now)
+- A suggested fix (specific action to take)
+- An option to generate a fix using AI
+
+## Aggregate Website Score
+
+Your brand's overall Website GEO Score is an aggregate of individual page scores. It provides a single metric for your site's AI readiness across all discovered pages.
+
+Track this score over time to measure the impact of site-wide optimization efforts.
+
+## Running a Website GEO Audit
+
+1. Navigate to your brand's **Website Audit** section
+2. Ensure your website URL is set in your Brand Profile
+3. Click **Start Crawl** to discover pages
+4. Review discovered pages and exclude any that are not relevant
+5. Click **Run Audit** to evaluate all pages
+6. Review per-page results and recommendations
+
+<Info>
+  Website audits analyze your public-facing pages. Make sure your site is accessible and not blocked by authentication or IP restrictions for the best results.
+</Info>
+
+## Credit Cost
+
+Website GEO Audits consume [Premium Credits](/reference/credit-system). The cost depends on the number of pages audited:
+
+- **Full website audit** — 10 credits (covers all discovered pages in batch)
+- **Individual page audit** — 2 credits per page
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What is a Website GEO Audit?">
+    A Website GEO Audit crawls your website, evaluates each page for AI readiness across four scoring dimensions (content structure, entity clarity, answer formatability, and semantic richness), and provides prioritized recommendations for improvement.
+  </Accordion>
+  <Accordion title="How is a Website GEO Audit different from an AEO Audit?">
+    An AEO Audit tests whether AI mentions your brand in its answers. A Website GEO Audit tests whether your website's content is structured so that AI systems can understand and cite it. AEO Audits measure outcomes; GEO Audits measure inputs.
+  </Accordion>
+  <Accordion title="How many pages can be audited?">
+    The crawler can discover hundreds of pages. All discovered pages can be audited, though you can exclude irrelevant ones. The audit processes pages in batches.
+  </Accordion>
+  <Accordion title="What should I do with the recommendations?">
+    Prioritize High-priority recommendations first. Each recommendation includes a suggested fix and an option to generate a fix automatically. Implement fixes on your site, then re-audit after a few weeks to measure improvement.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Win AI Citations" icon="trophy" href="/workflows/win-ai-citations">
+    Follow the full workflow from audit to improved visibility.
+  </Card>
+  <Card title="AEO Audits" icon="magnifying-glass-chart" href="/product/aeo-audits">
+    Run a brand-level audit to measure your current AI visibility.
+  </Card>
+</CardGroup>

@@ -1,0 +1,134 @@
+---
+title: "AEO Audits"
+description: "AEO Audits test your brand's visibility across AI models by running 20 category-neutral questions and measuring whether, where, and how your brand is mentioned in the responses."
+---
+
+## Overview
+
+An AEO Audit (Answer Engine Optimization Audit) is a systematic test of your brand's AI visibility. It runs 20 category-neutral [benchmark questions](/product/benchmark-questions) through an AI model and analyzes each response for whether your brand is mentioned, where it appears, and which competitors are cited.
+
+Each audit produces an [AEO Score](/reference/scoring-methodology) from 0 to 100 and a per-question breakdown that reveals exactly where your brand is visible and where gaps exist.
+
+## How an AEO Audit Works
+
+<Steps>
+  <Step title="Generate questions">
+    CiteScore generates 20 questions based on your [Brand Profile](/product/brand-profiles). Questions are category-neutral — they do not mention your brand name. This tests organic visibility.
+  </Step>
+  <Step title="Query the AI model">
+    Each question is sent to the selected AI model (ChatGPT, Gemini, Claude, or Perplexity). CiteScore captures the full response.
+  </Step>
+  <Step title="Analyze responses">
+    Each response is analyzed for:
+    - Whether your brand was mentioned
+    - Your position (Primary, Secondary, Listed, or Not Mentioned)
+    - Which competitors appeared
+    - The context and sentiment of your mention
+  </Step>
+  <Step title="Calculate score">
+    Results are aggregated into your AEO Score using the [scoring methodology](/reference/scoring-methodology): 5 points for Primary, 3 for Secondary, 2 for Listed, 0 for Not Mentioned.
+  </Step>
+</Steps>
+
+## Supported AI Models
+
+CiteScore supports auditing across four major AI providers:
+
+| Provider | Model | Notes |
+|----------|-------|-------|
+| **OpenAI** | GPT-4o, GPT-4o Mini | Most widely used; good baseline |
+| **Google** | Gemini | Integrates with Google Search data |
+| **Anthropic** | Claude | Known for nuanced, balanced responses |
+| **Perplexity** | Perplexity | Always cites sources; web-retrieval based |
+
+Different models produce different results. Running audits across multiple models gives a complete picture of your AI visibility landscape.
+
+## Reading Audit Results
+
+### Overall Metrics
+
+- **AEO Score (0–100)** — your aggregate visibility score
+- **Mention count** — how many of the 20 questions mentioned your brand
+- **Average rank** — your average position across all questions
+
+### Per-Question Breakdown
+
+For each of the 20 questions, you can see:
+
+- The exact question asked
+- The full AI response
+- Whether your brand was detected
+- Your rank bucket (Primary, Secondary, Listed, or None)
+- Points awarded
+- Competitors mentioned in the response
+
+### Rank Buckets
+
+| Bucket | Points | Meaning |
+|--------|--------|---------|
+| **Primary** | 5 | Your brand is the first or most prominently featured recommendation |
+| **Secondary** | 3 | Your brand is mentioned as a strong alternative (2nd or 3rd position) |
+| **Listed** | 2 | Your brand is included in a broader list of options |
+| **None** | 0 | Your brand was not mentioned |
+
+## Interpreting Patterns
+
+After reviewing per-question results, look for these patterns:
+
+**Consistent Primary mentions** — you have strong category association. Focus on maintaining this position with fresh content.
+
+**Mixed results (some Primary, some None)** — your visibility is uneven. Examine the questions where you are missing. They likely represent content gaps or positioning weaknesses.
+
+**Competitors appear, you don't** — the AI knows your category but not your brand. Prioritize building brand presence in the sources AI draws from (review sites, comparisons, authoritative publications).
+
+**Nobody mentioned** — the AI doesn't associate specific brands with these questions. This is a first-mover opportunity; creating targeted content could establish your brand in this space.
+
+## Running Multiple Audits
+
+Run audits regularly to track trends:
+
+- **Monthly cadence** — provides consistent data for trend analysis
+- **After content changes** — measure the impact of new content after 4–8 weeks
+- **Across models** — run separate audits for different AI models to compare visibility
+- **Before and after campaigns** — establish baselines and measure campaign effectiveness
+
+Each audit includes a timestamp so you can chart your AEO Score over time.
+
+## Credit Cost
+
+AEO Audits consume [Premium Credits](/reference/credit-system). Each plan includes monthly free audits:
+
+| Plan | Free Monthly Audits | Additional Audit Cost |
+|------|--------------------|-----------------------|
+| Free | 1 (one-time) | — |
+| Starter | 1 per month | 10 credits |
+| Pro | Included | 10 credits |
+| Enterprise | Unlimited | Included |
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What is an AEO Audit?">
+    An AEO Audit runs 20 category-neutral questions through an AI model and checks whether your brand appears in the responses. It produces an AEO Score (0–100) and a per-question breakdown showing your visibility across different question types.
+  </Accordion>
+  <Accordion title="Why are audit questions neutral?">
+    Neutral questions (without your brand name) test organic visibility — whether AI naturally recommends you when users ask relevant questions. This mirrors real-world discovery behavior.
+  </Accordion>
+  <Accordion title="How long does an audit take?">
+    Most audits complete in two to five minutes. The time depends on the AI model's response speed and current load.
+  </Accordion>
+  <Accordion title="Can I compare audits across different AI models?">
+    Yes. Run separate audits against different models and compare results. Each audit is tagged with the model used, making cross-model comparison straightforward.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Scoring Methodology" icon="chart-simple" href="/reference/scoring-methodology">
+    Understand exactly how your AEO Score is calculated.
+  </Card>
+  <Card title="Monthly Audit Workflow" icon="calendar" href="/workflows/monthly-audit">
+    Set up a recurring audit cadence to track trends.
+  </Card>
+</CardGroup>

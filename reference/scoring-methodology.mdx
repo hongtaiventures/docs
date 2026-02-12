@@ -1,0 +1,148 @@
+---
+title: "AEO Scoring Methodology"
+description: "How CiteScore calculates AEO Scores: the 20-question framework, rank buckets, point allocation, and scoring dimensions for both brand audits and website page audits."
+---
+
+## Overview
+
+The AEO Score is a 0–100 metric that quantifies your brand's AI visibility. This page explains exactly how it is calculated, what the scoring dimensions are, and how to interpret the results.
+
+CiteScore uses two scoring systems:
+- **Brand AEO Score** — measures whether AI mentions your brand (from AEO Audits)
+- **Page GEO Score** — measures how AI-ready your website pages are (from Website GEO Audits)
+
+## Brand AEO Score
+
+### How It Works
+
+A Brand AEO Score is calculated from the results of an [AEO Audit](/product/aeo-audits):
+
+1. **20 questions** are run through an AI model
+2. Each response is analyzed for your brand's presence
+3. Each question is assigned a **rank bucket** based on where your brand appears
+4. Points are awarded based on the rank bucket
+5. Points are summed to produce the final score
+
+### Rank Buckets and Points
+
+| Rank Bucket | Points | Criteria |
+|-------------|--------|----------|
+| **Primary** | 5 | Your brand is the first or most prominently featured recommendation |
+| **Secondary** | 3 | Your brand is mentioned as a strong alternative (typically 2nd or 3rd position) |
+| **Listed** | 2 | Your brand is included in a broader list of options |
+| **None** | 0 | Your brand is not mentioned in the response |
+
+### Score Calculation
+
+```
+AEO Score = Sum of points across all 20 questions
+Maximum possible = 20 questions × 5 points = 100
+```
+
+**Example:**
+- 6 Primary mentions (6 × 5 = 30 points)
+- 4 Secondary mentions (4 × 3 = 12 points)
+- 3 Listed mentions (3 × 2 = 6 points)
+- 7 Not Mentioned (7 × 0 = 0 points)
+- **Total AEO Score: 48 / 100**
+
+### Derived Metrics
+
+In addition to the overall score, CiteScore calculates:
+
+- **Mention rate** — percentage of questions where your brand appeared (in this example: 13/20 = 65%)
+- **Average rank** — average position across all questions (1 = Primary, 2 = Secondary, 3 = Listed, 4 = None)
+- **Mention count** — absolute number of questions with a mention
+
+### Score Ranges
+
+| Range | Visibility Level | Typical Situation |
+|-------|-----------------|-------------------|
+| 0–30 | Low | Brand rarely mentioned; limited AI presence |
+| 30–50 | Emerging | Occasional mentions; growing but inconsistent |
+| 50–70 | Moderate | Regular mentions; competitive position |
+| 70–85 | Strong | Frequently mentioned, often prominently |
+| 85–100 | Excellent | Dominant in AI recommendations for the category |
+
+<Info>
+  Scores are relative to your category. A score of 50 in a crowded SaaS category with 20+ competitors may represent strong positioning. The same score in a niche with 3 competitors may indicate room for improvement.
+</Info>
+
+## Page GEO Score
+
+### How It Works
+
+A Page GEO Score is calculated from a [Website GEO Audit](/product/website-geo-audit) and measures how well a specific page is optimized for AI systems.
+
+### Scoring Dimensions
+
+Each page is scored across four dimensions, each worth 0–25 points:
+
+| Dimension | Weight | What It Measures |
+|-----------|--------|-----------------|
+| **Content Structure** | 0–25 | Heading hierarchy, section flow, content length, logical organization |
+| **Entity Clarity** | 0–25 | Brand name clarity, product category statements, named entity context |
+| **Answer Formatability** | 0–25 | FAQ sections, direct answers, extractable lists, summary paragraphs |
+| **Semantic Richness** | 0–25 | Topic depth, related concept coverage, specific examples and data |
+
+```
+Page GEO Score = Content Structure + Entity Clarity + Answer Formatability + Semantic Richness
+Maximum possible = 25 + 25 + 25 + 25 = 100
+```
+
+### Website Aggregate Score
+
+Your brand's overall Website GEO Score is the average of all individual page scores across your audited website.
+
+## Detection Methodology
+
+### Brand Mention Detection
+
+CiteScore detects brand mentions using:
+
+- **Exact name matching** — searches for your brand name in AI responses
+- **Alias matching** — checks for known variations and aliases
+- **Context analysis** — evaluates the surrounding text to determine rank bucket (Primary, Secondary, Listed)
+- **Competitor detection** — identifies competitor brands mentioned in the same response
+
+### Confidence Scoring
+
+Each detection includes a confidence score that reflects certainty in the rank bucket assignment. Edge cases (ambiguous mentions, partial name matches) receive lower confidence scores.
+
+## Factors That Affect Scores
+
+### Why Scores Vary by Model
+
+Running the same questions through different AI models often produces different scores because:
+
+- Models are trained on different data at different times
+- Some models use real-time retrieval (Perplexity, Gemini) while others rely on training data (ChatGPT, Claude)
+- Model architectures process and weight information differently
+- Response variability exists even within the same model
+
+### Why Scores Change Over Time
+
+Month-to-month score changes can result from:
+
+- **Content you published** — new or updated content that AI systems have indexed
+- **AI model updates** — models are periodically retrained or updated
+- **Competitor activity** — competitors publishing content that changes the competitive landscape
+- **Training data changes** — shifts in the data sources AI models draw from
+- **Random variability** — inherent randomness in AI response generation
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How is the AEO Score calculated?">
+    The AEO Score is the sum of points across 20 category-neutral questions. Each question is scored based on your brand's position in the AI response: 5 points for Primary mention, 3 for Secondary, 2 for Listed, and 0 for Not Mentioned. Maximum score is 100.
+  </Accordion>
+  <Accordion title="What is a good AEO Score?">
+    Scores vary by industry. Generally, 0–30 is low visibility, 30–50 is emerging, 50–70 is moderate, 70–85 is strong, and 85–100 is excellent. Focus on trend direction rather than comparing scores across different categories.
+  </Accordion>
+  <Accordion title="Why does my score differ between AI models?">
+    Each model has different training data, retrieval systems, and response patterns. It is normal for your brand to score differently across ChatGPT, Gemini, Claude, and Perplexity.
+  </Accordion>
+  <Accordion title="How are Page GEO Scores different from Brand AEO Scores?">
+    Brand AEO Scores measure whether AI mentions your brand (an outcome). Page GEO Scores measure whether your website pages are structured for AI readability (an input). Improving Page GEO Scores can lead to improved Brand AEO Scores over time.
+  </Accordion>
+</AccordionGroup>

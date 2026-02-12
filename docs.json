@@ -1,68 +1,62 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "CiteScore",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#18181B",
+    "light": "#F4F4F5",
+    "dark": "#18181B"
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "getting-started/what-is-citescore",
+              "getting-started/quickstart",
+              "getting-started/core-concepts"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Product",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "product/brand-profiles",
+              "product/strategy",
+              "product/benchmark-questions",
+              "product/content-generation",
+              "product/aeo-audits",
+              "product/website-geo-audit"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Workflows",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "workflows/win-ai-citations",
+              "workflows/monthly-audit",
+              "workflows/launch-new-content"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Reference",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "reference/scoring-methodology",
+              "reference/credit-system",
+              "reference/model-selection"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Company",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "company/security",
+              "company/changelog"
             ]
           }
         ]
@@ -71,52 +65,32 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "App",
+          "href": "https://citescore.ai",
+          "icon": "arrow-up-right-from-square"
         }
       ]
     }
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "App",
+        "href": "https://citescore.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "https://citescore.ai/signup"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://citescore.ai"
     }
+  },
+  "seo": {
+    "indexHiddenPages": false
   }
 }

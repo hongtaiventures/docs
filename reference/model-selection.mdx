@@ -1,0 +1,130 @@
+---
+title: "AI Model Selection"
+description: "CiteScore supports OpenAI, Anthropic, Google Gemini, and Perplexity models. Learn how to configure model preferences and understand the differences between providers."
+---
+
+## Overview
+
+CiteScore supports multiple AI providers and models. You can configure which model to use for different operations, and on eligible plans, bring your own API keys (BYOK) for direct provider access.
+
+Understanding the differences between models helps you choose the right one for each use case and interpret audit results across providers.
+
+## Supported Providers and Models
+
+### OpenAI
+
+| Model | Use Cases | Notes |
+|-------|-----------|-------|
+| **GPT-4o** | High-quality content generation, detailed analysis | Higher cost, most capable |
+| **GPT-4o Mini** | Audits, benchmarks, standard generation | Good balance of cost and quality; default model |
+
+OpenAI models are the most widely tested and serve as the default for most operations. GPT-4o Mini provides a cost-effective option for audits and benchmarks where speed matters more than maximum depth.
+
+### Anthropic
+
+| Model | Use Cases | Notes |
+|-------|-----------|-------|
+| **Claude** | Content generation, nuanced analysis | Known for balanced, thoughtful responses |
+
+Anthropic's Claude models tend to produce nuanced, well-structured responses. They are a strong choice for content generation where balance and depth matter.
+
+### Google
+
+| Model | Use Cases | Notes |
+|-------|-----------|-------|
+| **Gemini** | Audits, benchmarks | Integrates with Google Search data |
+
+Gemini models can access real-time information through Google Search integration. This makes them particularly relevant for auditing visibility in Google's AI ecosystem.
+
+### Perplexity
+
+| Model | Use Cases | Notes |
+|-------|-----------|-------|
+| **Perplexity** | Audits, citation analysis | Always retrieves and cites web sources |
+
+Perplexity always performs web retrieval and cites its sources. Auditing against Perplexity tests whether your brand appears in retrieval-augmented AI responses, which is a distinct visibility signal from training-data-based models.
+
+## Configuring Model Preferences
+
+You can set default models for each operation type in your workspace settings:
+
+| Operation | Setting | Default |
+|-----------|---------|---------|
+| **Benchmark testing** | Benchmark Provider + Model | OpenAI / GPT-4o Mini |
+| **Content generation** | Content Provider + Model | OpenAI / GPT-4o Mini |
+| **Image generation** | Image Provider + Model | OpenAI / DALL-E 3 |
+| **AEO Audits** | AEO Audit Provider + Model | OpenAI / GPT-4o Mini |
+
+To change defaults:
+1. Go to **Settings** > **AI Models**
+2. Select your preferred provider and model for each operation
+3. Save changes
+
+Model preferences apply to all future operations. Previously completed audits and content retain their original model configuration.
+
+## BYOK (Bring Your Own Key)
+
+On Pro and Enterprise plans, you can use your own AI provider API keys:
+
+### Supported Providers
+
+- **OpenAI** — api key from platform.openai.com
+- **Anthropic** — api key from console.anthropic.com
+- **Google (Gemini)** — api key from ai.google.dev
+- **Perplexity** — api key from perplexity.ai
+
+### Setup
+
+1. Go to **Settings** > **AI Keys**
+2. Select a provider
+3. Enter your API key (encrypted with AES-256-GCM at rest)
+4. CiteScore validates the key
+5. Once validated, operations for that provider use your key
+
+### Benefits of BYOK
+
+- **Cost control** — pay your AI provider directly at their rates
+- **Higher rate limits** — use your own quota instead of CiteScore's shared pool
+- **Model access** — access any model available on your provider account
+- **Credit savings** — reduced or waived CiteScore credit consumption for BYOK operations
+
+## Model Differences for Audits
+
+When running [AEO Audits](/product/aeo-audits) across different models, expect different results:
+
+| Factor | ChatGPT (OpenAI) | Gemini (Google) | Claude (Anthropic) | Perplexity |
+|--------|-------------------|-----------------|--------------------|-----------| 
+| **Data source** | Training data | Training + Search | Training data | Web retrieval |
+| **Citation behavior** | Rarely cites | Sometimes cites | Rarely cites | Always cites |
+| **Brand mention frequency** | Common | Moderate | Moderate | Source-dependent |
+| **Response style** | Conversational | Search-informed | Analytical | Citation-focused |
+| **Update frequency** | Periodic training | Continuous search | Periodic training | Real-time retrieval |
+
+Running audits across multiple models provides the most complete picture of your AI visibility landscape.
+
+## Choosing the Right Model
+
+**For baseline audits:** Start with OpenAI GPT-4o Mini. It is the most widely used model and provides a reliable baseline.
+
+**For comprehensive visibility assessment:** Run audits across all four providers to understand your cross-model visibility.
+
+**For content generation:** OpenAI GPT-4o or Anthropic Claude produce the highest quality long-form content.
+
+**For retrieval-based visibility:** Perplexity tests whether your brand appears in web-augmented AI responses, which is a distinct signal from training-based models.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Which AI model should I use for audits?">
+    Start with OpenAI GPT-4o Mini as your baseline. For a complete picture, run separate audits against Gemini, Claude, and Perplexity as well. Different models may show different visibility results for your brand.
+  </Accordion>
+  <Accordion title="What is BYOK?">
+    BYOK (Bring Your Own Key) lets you use your own AI provider API keys in CiteScore. Available on Pro and Enterprise plans, it gives you direct cost control and access to any model on your provider account.
+  </Accordion>
+  <Accordion title="Are my API keys secure?">
+    Yes. API keys are encrypted at rest using AES-256-GCM encryption. Only the last four characters are displayed in the interface. Keys are validated on entry and used only for your workspace's operations.
+  </Accordion>
+  <Accordion title="Do I need BYOK to use CiteScore?">
+    No. CiteScore provides platform-managed AI access on all plans. BYOK is an optional feature on Pro and Enterprise plans for users who want direct provider relationships and cost control.
+  </Accordion>
+</AccordionGroup>
